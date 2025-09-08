@@ -18,6 +18,9 @@ const StudentDashboard = () => {
   const handleMyEnrollments = () => {
     navigate("/enroll");
   };
+  const HandleProgress=()=>{
+    navigate("/StudentProgress")
+  }
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -83,6 +86,7 @@ const StudentDashboard = () => {
       <div className="dashboard-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
         <h1 className="dashboard-title">Student Dashboard</h1>
         <div className="dashboard-actions mt-2 mt-md-0">
+          <Button className="me-2" onClick={HandleProgress}>Progress</Button>
           <Button className="me-2" onClick={handleMyEnrollments}>
             My Enrollments
           </Button>

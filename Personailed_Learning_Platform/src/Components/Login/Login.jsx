@@ -9,7 +9,7 @@ import axios from "axios";
 const Login = () => {
   const [Email, SetEmail] = useState("");
   const [Password, SetPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("Student");
   const navigate = useNavigate();
 
   const HandleSignUp = () => {
@@ -109,12 +109,13 @@ console.log("success")
                     <Form.Label>Role</Form.Label>
                     <Form.Select
                       value={role}
+                      def
                       onChange={(e) => setRole(e.target.value)}
                     >
                       <option value="">Select Role</option>
                       <option value="Student">Student</option>
                       <option value="Instructor">Instructor</option>
-                      <option value="Admin">Admin</option>
+                   
                     </Form.Select>
                   </Form.Group>
 

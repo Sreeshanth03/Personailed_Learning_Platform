@@ -71,12 +71,15 @@ const Instructor = () => {
       courseImages.default
     );
   };
-
+const HandleProgress=()=>{
+  navigate("/progress")
+}
   return (
     <div className="instructor-dashboard">
       <h2>Welcome to Instructor Dashboard</h2>
       <Button onClick={handlePosting}>My Posting</Button>
       <Button onClick={HandlePost}>Post A Course</Button>
+      <Button onClick={HandleProgress}>Students Progress</Button>
 
       <div className="courses-container">
         {courses.length === 0 && <p>Hello Instructor</p>}
@@ -127,6 +130,7 @@ const Instructor = () => {
         <div className="video-modal" onClick={() => setSelectedVideo(null)}>
           <div className="video-container" onClick={(e) => e.stopPropagation()}>
             <video src={selectedVideo} controls autoPlay />
+ 
             <button onClick={() => setSelectedVideo(null)}>Close</button>
           </div>
         </div>

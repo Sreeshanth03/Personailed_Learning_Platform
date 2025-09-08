@@ -19,6 +19,8 @@ import Java1 from "./Components/DashBoard/StudentDashBoard/Quiz/AllQuiz/Java1"
 import C1 from "./Components/DashBoard/StudentDashBoard/Quiz/AllQuiz/C1"
 import Certificate from "./Components/DashBoard/StudentDashBoard/Quiz/Certificate/Certificate";
 import Post from "./Components/DashBoard/Instructor/Post/Post";
+import Progress from "./Components/DashBoard/Instructor/Progress/Progress";
+import StudentProgress from "./Components/DashBoard/StudentDashBoard/StudentProgress/StudentProgress";
 const App = () => {
   return (
     <div>
@@ -38,9 +40,12 @@ const App = () => {
           <Route path="/sap" element={<Sap1/>}/>
 <Route path="/java" element={<Java1/>}></Route>
 <Route path="/c" element={<C1/>}></Route>
+<Route path="/StudentProgress" element={<StudentProgress/>}></Route>
 
         <Route path="/Instructor" element={<Instructor />}></Route>
         <Route path="/post"element={<Post/>}></Route>
+
+        <Route path="/progress" element={<Progress/>}></Route>
         <Route path="/Admin" element={<Manager />}></Route>
         <Route path="/certificate" element={<Certificate/>}></Route>
       </Routes>

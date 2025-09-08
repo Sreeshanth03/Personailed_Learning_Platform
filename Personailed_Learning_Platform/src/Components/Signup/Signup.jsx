@@ -119,7 +119,7 @@ const Signup = () => {
                 <option value="">Select Role</option>
                 <option value="Student">Student</option>
                 <option value="Instructor">Instructor</option>
-                <option value="Admin">Admin</option>
+              
               </Form.Select>
             </Form.Group>
 
