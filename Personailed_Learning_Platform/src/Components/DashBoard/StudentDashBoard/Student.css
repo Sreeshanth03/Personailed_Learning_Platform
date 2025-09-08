@@ -1,0 +1,160 @@
+/* Dashboard Layout */
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4169e1, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-actions button {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Card Styling */
+.course-card {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.25);
+}
+
+.course-img {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid #4169e1;
+}
+
+/* Card Content */
+.course-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4169e1;
+  margin-bottom: 6px;
+}
+
+.course-desc {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.course-category,
+.course-instructor {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.course-category strong,
+.course-instructor strong {
+  color: #4169e1;
+}
+
+/* Enroll Button */
+.enroll-btn {
+  background: linear-gradient(135deg, #4169e1, #00c6ff);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  padding: 10px 14px;
+  box-shadow: 0 3px 8px rgba(65, 105, 225, 0.3);
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, #27408b, #0088cc);
+  box-shadow: 0 5px 12px rgba(65, 105, 225, 0.5);
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .dashboard-actions {
+    justify-content: center;
+    display: flex;
+    gap: 8px;
+  }
+  .course-img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-title {
+    font-size: 1.4rem;
+  }
+  .course-img {
+    height: 140px;
+  }
+  .enroll-btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+  .course-title {
+    font-size: 1.1rem;
+  }
+}
+/* Force card background white */
+.course-card {
+  background: #ffffff !important;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.25);
+}
+
+/* Card image */
+.course-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card text */
+.course-title,
+.course-desc,
+.course-category,
+.course-instructor {
+  color: #222 !important;   /* dark text on white bg */
+}
+
+/* Button */
+.enroll-btn {
+  background: linear-gradient(135deg, #4169e1, #00c6ff);
+  border: none;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, #27408b, #0088cc);
+  transform: scale(1.05);
+}

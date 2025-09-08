@@ -1,0 +1,150 @@
+/* Full page background with dark overlay & slideshow effect */
+.login-page {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f") 
+    no-repeat center center/cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeBg 20s infinite alternate ease-in-out;
+}
+
+/* Card styling */
+.login-card {
+  border-radius: 20px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease-in-out;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Logo styling */
+.login-logo {
+  width: 70px;
+  height: 70px;
+}
+
+/* New User Section */
+.new-user-section {
+  margin-top: 20px;
+}
+
+.new-user-section h6 {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+/* SignUp Button Style */
+.signup-btn {
+  border-radius: 25px;
+  font-size: 14px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  border: 2px solid #007bff;
+}
+
+.signup-btn:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Background slideshow animation */
+@keyframes fadeBg {
+  0% {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.55), 
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  }
+  33% {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.55), 
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("https://images.unsplash.com/photo-1551434678-e076c223a692");
+  }
+  66% {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.55), 
+        rgba(0, 0, 0, 0.55)
+      ),
+      url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b");
+  }
+}
+
+/* Primary Button hover */
+button.btn-primary:hover {
+  background-color: #0056b3;
+  transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page {
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 15px;
+  }
+  
+  .login-card {
+    padding: 20px;
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .login-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .signup-btn {
+    font-size: 13px;
+    padding: 6px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 10px;
+  }
+  
+  .login-card {
+    padding: 15px;
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .login-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .signup-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}

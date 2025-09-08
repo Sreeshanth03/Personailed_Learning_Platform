@@ -1,0 +1,529 @@
+/* Container */
+.certificate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #f8f9fa, #eef2f3);
+  min-height: 100vh;
+  font-family: "Georgia", serif;
+}
+
+/* Border box */
+.certificate-border {
+  background: white;
+  border: 10px solid #2c3e50;
+  padding: 40px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+
+/* Title */
+.certificate-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.certificate-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.platform {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Body */
+.certificate-body h2 {
+  font-size: 2rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.student-name {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 15px 0;
+}
+
+/* Footer */
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.certificate-footer .signature,
+.certificate-footer .date {
+  width: 40%;
+}
+
+.certificate-footer hr {
+  border: 1px solid #2c3e50;
+  margin-bottom: 5px;
+}
+
+.certificate-wish {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .certificate-border {
+    padding: 30px;
+  }
+  .certificate-title {
+    font-size: 2rem;
+  }
+  .student-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate-border {
+    padding: 20px;
+  }
+  .certificate-title {
+    font-size: 1.8rem;
+  }
+  .certificate-body h2 {
+    font-size: 1.5rem;
+  }
+  .student-name {
+    font-size: 1.5rem;
+  }
+  .certificate-footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-title {
+    font-size: 1.5rem;
+  }
+  .certificate-subtitle {
+    font-size: 1rem;
+  }
+  .certificate-body h2,
+  .student-name {
+    font-size: 1.2rem;
+  }
+}
+/* Global Styles */
+.home-container {
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.home-title {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.tutors-link {
+  cursor: pointer;
+  color: #2980b9;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.tutors-link:hover {
+  color: #1a5276;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.hero-title {
+  color: #34495e;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Programming Courses */
+.programming-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.programming-title {
+  color: #16a085;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.programming-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Tutor Matching Process */
+.matching-section {
+  margin: 50px 0;
+}
+
+.matching-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+.matching-step {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.step-1 h2 {
+  color: #e67e22;
+}
+
+.step-2 h2 {
+  color: #27ae60;
+}
+
+.step-3 h2 {
+  color: #8e44ad;
+}
+
+.matching-step h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.matching-step h6 {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Subjects Section */
+.subjects-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.subjects-title {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  height: 40px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.marquee-content {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  color: #d35400;
+  font-weight: 600;
+  padding: 8px 0;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Grades Section */
+.grades-section {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.grades-title {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.grade-level {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.primary-school {
+  color: #3498db;
+}
+
+.middle-school {
+  color: #9b59b6;
+}
+
+.high-school {
+  color: #e74c3c;
+}
+
+.adult-learning {
+  color: #16a085;
+}
+
+/* Form Styles */
+.registration-form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  margin: 40px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+.phone-input-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.phone-input-group select {
+  flex: 1;
+  min-width: 150px;
+}
+
+.phone-input-group input {
+  flex: 2;
+  min-width: 200px;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin-top: 50px;
+}
+
+.faq-title {
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+/* Certificate Section */
+.certificate-section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.certificate-container {
+  padding: 40px 20px;
+  margin: 30px 0;
+}
+
+.certificate-border {
+  border: 20px solid #1a5276;
+  padding: 40px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 25px rgba(0,0,0,0.1);
+}
+
+.certificate-title {
+  color: #1a5276;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.certificate-subtitle {
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.platform {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.certificate-body {
+  margin: 30px 0;
+}
+
+.certificate-body h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.student-name {
+  color: #e74c3c;
+  font-size: 2rem;
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px dashed #bdc3c7;
+  display: inline-block;
+}
+
+.certificate-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 20px;
+  flex-wrap: wrap;
+}
+
+.signature, .date {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.signature hr, .date hr {
+  width: 200px;
+  border: 1px solid #7f8c8d;
+  margin-bottom: 10px;
+}
+
+.certificate-wish {
+  color: #16a085;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero-title, .programming-title, .matching-title, 
+  .subjects-title, .grades-title, .form-title {
+    font-size: 1.8rem;
+  }
+  
+  .phone-input-group {
+    flex-direction: column;
+  }
+  
+  .phone-input-group select, .phone-input-group input {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .certificate-border {
+    padding: 20px;
+    border-width: 10px;
+  }
+  
+  .certificate-title {
+    font-size: 2rem;
+  }
+  
+  .certificate-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .matching-step {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-container {
+    padding: 15px;
+  }
+  
+  .hero-section, .programming-section {
+    padding: 20px 15px;
+  }
+  
+  .registration-form {
+    padding: 20px 15px;
+  }
+  
+  .certificate-border {
+    padding: 15px;
+    border-width: 5px;
+  }
+  
+  .certificate-title {
+    font-size: 1.8rem;
+  }
+  
+  .student-name {
+    font-size: 1.5rem;
+  }
+  
+  .hero-title, .programming-title, .matching-title, 
+  .subjects-title, .grades-title, .form-title {
+    font-size: 1.5rem;
+  }
+}
