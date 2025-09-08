@@ -3,9 +3,9 @@ import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { url } from "../../../App";
-import "../StudentDashBoard/Student.css";
+import "./Student.css"
 
-const StudentDashboard = () => {
+const Student = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
 
@@ -18,7 +18,8 @@ const StudentDashboard = () => {
   const handleMyEnrollments = () => {
     navigate("/enroll");
   };
-  const HandleProgress=()=>{
+  
+  const HandleProgress = () => {
     navigate("/StudentProgress")
   }
 
@@ -71,71 +72,64 @@ const StudentDashboard = () => {
       await navigate("/StudentDetails");
     }
   };
- const courseImages = {
-  "React.js": "https://wallpaperbat.com/img/860858-react-native-wallpaper.png",
-  "Python Programming": "https://cdn.analyticsvidhya.com/wp-content/uploads/2021/10/57202wallpaper.png",
-  "Java Programming": "https://wp.logos-download.com/wp-content/uploads/2016/10/Java_logo_icon.png",
-  "C#": "https://i.ytimg.com/vi/4HD7C1XwSdo/maxresdefault.jpg",
-  "HTML":"https://wallpaperaccess.com/full/4868338.jpg",
-  "CSS (Cascading Style Sheets)":"https://tse1.mm.bing.net/th/id/OIP.Mn3-Dzome31rYUCi5rHmaQHaDk?pid=Api&P=0&h=180",
-  "Introduction to React Fundamentals":"https://wallpaperbat.com/img/860858-react-native-wallpaper.png",
-  "Default": "https://via.placeholder.com/600x300.png?text=Course+Image"
-};
+  
+  const courseImages = {
+    "React.js": "https://wallpaperbat.com/img/860858-react-native-wallpaper.png",
+    "Python Programming": "https://cdn.analyticsvidhya.com/wp-content/uploads/2021/10/57202wallpaper.png",
+    "Java Programming": "https://wp.logos-download.com/wp-content/uploads/2016/10/Java_logo_icon.png",
+    "C#": "https://i.ytimg.com/vi/4HD7C1XwSdo/maxresdefault.jpg",
+    "HTML": "https://wallpaperaccess.com/full/4868338.jpg",
+    "CSS (Cascading Style Sheets)": "https://tse1.mm.bing.net/th/id/OIP.Mn3-Dzome31rYUCi5rHmaQHaDk?pid=Api&P=0&h=180",
+    "Introduction to React Fundamentals": "https://wallpaperbat.com/img/860858-react-native-wallpaper.png",
+    "Default": "https://via.placeholder.com/600x300.png?text=Course+Image"
+  };
+  
   return (
-    <Container className="dashboard-container">
-      <div className="dashboard-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
-        <h1 className="dashboard-title">Student Dashboard</h1>
-        <div className="dashboard-actions mt-2 mt-md-0">
-          <Button className="me-2" onClick={HandleProgress}>Progress</Button>
-          <Button className="me-2" onClick={handleMyEnrollments}>
+    <Container className="student-dashboard-container-unique">
+      <div className="student-dashboard-header-unique d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+        <h1 className="student-dashboard-title-unique">Student Dashboard</h1>
+        <div className="student-dashboard-actions-unique mt-2 mt-md-0">
+          <Button className="student-progress-btn-unique me-2" onClick={HandleProgress}>Progress</Button>
+          <Button className="student-enrollments-btn-unique me-2" onClick={handleMyEnrollments}>
             My Enrollments
           </Button>
-          <Button variant="danger" onClick={handleLogout}>
+          <Button className="student-logout-btn-unique" variant="danger" onClick={handleLogout}>
             Logout
           </Button>
         </div>
       </div>
 
-      <Row className="g-4">
+      <Row className="student-courses-row-unique g-4">
         {courses.length === 0 && (
-          <p className="no-courses">No courses available at the moment.</p>
+          <p className="student-no-courses-unique">No courses available at the moment.</p>
         )}
 
         {courses.map((course) => (
           <Col key={course._id} xs={12} sm={6} lg={4}>
-            <Card className="course-card shadow-sm h-100">
-              {/* ✅ Add course image or fallback */}
-              {/* <Card.Img
-                variant="top"
-                src={
-                  course.image ||
-                 "https://images.hdqwalls.com/wallpapers/react-js-logo-no.jpg"
-                }
-                className="course-img"
-              /> */}
+            <Card className="student-course-card-unique shadow-sm h-100">
               <Card.Img
-  variant="top"
-  src={courseImages[course.title] || courseImages["Default"]}
-  className="course-img"
-/>
-              <Card.Body className="d-flex flex-column">
-                <Card.Title className="course-title"style={{color:"whitesmoke"}}>
+                variant="top"
+                src={courseImages[course.title] || courseImages["Default"]}
+                className="student-course-img-unique"
+              />
+              <Card.Body className="student-course-body-unique d-flex flex-column">
+                <Card.Title className="student-course-title-unique">
                   {course.title || "Untitled Course"}
                 </Card.Title>
-                <Card.Text className="course-desc"style={{color:"whitesmoke"}}>
+                <Card.Text className="student-course-desc-unique">
                   {course.description || "No description provided."}
                 </Card.Text>
-                <Card.Text className="course-category"style={{color:"whitesmoke"}}>
+                <Card.Text className="student-course-category-unique">
                   <strong>Category:</strong> {course.category || "General"}
                 </Card.Text>
-                <Card.Text className="course-instructor"style={{color:"whitesmoke"}}>
+                <Card.Text className="student-course-instructor-unique">
                   <strong>Instructor:</strong>{" "}
                   {course.instructor?.name || "N/A"}
                 </Card.Text>
                 <Button
                   variant="primary"
                   onClick={() => handleEnrollButton(course._id)}
-                  className="mt-auto enroll-btn"
+                  className="student-enroll-btn-unique mt-auto"
                 >
                   Enroll
                 </Button>
@@ -148,4 +142,4 @@ const StudentDashboard = () => {
   );
 };
 
-export default StudentDashboard;
+export default Student;

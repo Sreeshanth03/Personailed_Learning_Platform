@@ -1,110 +1,280 @@
-/* Container */
+/* Student Progress CSS - Updated to match reference image */
+
 .student-progress-container {
   max-width: 800px;
-  margin: 20px auto;
-  padding: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 2rem auto;
+  padding: 1rem;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Title */
-.student-progress-container h2 {
+h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
-/* Card */
 .progress-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
 }
 
-/* Rows */
+.progress-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Course Image */
+.course-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+  grid-column: 1 / -1;
+}
+
+.progress-card:hover .course-img {
+  transform: scale(1.03);
+}
+
+/* Progress Rows - Left column */
+.progress-stats {
+  grid-column: 1;
+}
+
 .progress-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
-  font-size: 16px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #34495e;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
 
-.progress-row:last-child {
-  border-bottom: none;
+.icon {
+  margin-right: 0.5rem;
+  color: #3498db;
 }
 
-/* Completed Lessons */
+.icon.completed {
+  color: #27ae60;
+}
+
+/* Completed Lessons - Right column */
 .completed-lessons {
-  margin-top: 15px;
+  grid-column: 2;
+  margin-top: 0;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 10px;
+  height: fit-content;
 }
 
 .completed-lessons h4 {
-  margin-bottom: 8px;
-  color: #555;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
 }
 
 .completed-lessons ul {
-  list-style: disc;
-  padding-left: 20px;
-  color: #333;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 .completed-lessons li {
-  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #495057;
+  animation: fadeInItem 0.5s ease forwards;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  transition: background 0.2s ease;
 }
 
-/* Progress Bar */
+.completed-lessons li:hover {
+  background: #e9ecef;
+}
+
+.icon-list {
+  color: #27ae60;
+  margin-right: 0.7rem;
+  min-width: 16px;
+}
+
+/* Progress Bar - Full width at bottom */
 .progress-bar {
   width: 100%;
-  height: 25px;
-  background-color: #eee;
-  border-radius: 12px;
+  background: #e9ecef;
+  border-radius: 10px;
   overflow: hidden;
-  margin-top: 15px;
+  margin-top: 1.5rem;
+  height: 30px;
+  grid-column: 1 / -1;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .progress-filled {
   height: 100%;
-  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
   color: #fff;
-  text-align: center;
-  font-weight: bold;
-  line-height: 25px;
-  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Loading */
+/* Percentage display - positioned similarly to reference */
+.percentage-display {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4facfe;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 2px dashed #4facfe;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .loading {
   text-align: center;
-  font-size: 18px;
-  color: #555;
-  padding: 40px 0;
+  font-size: 1.2rem;
+  color: #3498db;
+  animation: pulse 1.5s infinite;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .progress-row {
-    font-size: 14px;
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
   }
-
-  .progress-filled {
-    font-size: 14px;
-    line-height: 22px;
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
   }
 }
 
-@media (max-width: 480px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
   .student-progress-container {
-    padding: 10px;
+    padding: 1rem;
   }
+  .progress-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
 
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .progress-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .progress-stats,
+  .completed-lessons {
+    grid-column: 1;
+  }
+  
   .progress-row {
-    font-size: 12px;
+    font-size: 0.95rem;
   }
+  
+  .course-img {
+    height: 160px;
+  }
+  
+  .percentage-display {
+    font-size: 1.3rem;
+  }
+}
 
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+  
+  .progress-card {
+    padding: 0.8rem;
+  }
+  
+  .course-img {
+    height: 140px;
+  }
+  
+  .progress-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .progress-row span:last-child {
+    margin-top: 0.3rem;
+    font-weight: 700;
+    align-self: flex-end;
+  }
+  
+  .percentage-display {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+  
+  .progress-bar {
+    height: 25px;
+  }
+  
   .progress-filled {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.8rem;
   }
 }

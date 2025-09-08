@@ -1,160 +1,232 @@
+/* Student Dashboard - Unique Class Names */
+
 /* Dashboard Layout */
-.dashboard-container {
+.student-dashboard-container-unique {
   padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
 }
 
-.dashboard-title {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #4169e1, #00c6ff);
+.student-dashboard-title-unique {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4169e1, #00c6ff, #5e17eb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: student-text-shimmer-unique 3s infinite linear;
 }
 
-.dashboard-actions button {
+@keyframes student-text-shimmer-unique {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.student-dashboard-actions-unique button {
   font-size: 0.9rem;
   font-weight: 600;
+  border-radius: 25px;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
 }
 
-/* Card Styling */
-.course-card {
+/* Consistent button colors */
+.student-progress-btn-unique,
+.student-enrollments-btn-unique,
+.student-logout-btn-unique {
+  background: linear-gradient(135deg, #4169e1, #00c6ff);
   border: none;
-  border-radius: 18px;
+  color: white;
+}
+
+.student-dashboard-actions-unique button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #27408b, #0088cc);
+}
+
+/* Card Styling - Adjusted to match reference image size */
+.student-course-card-unique {
+  border: none;
+  border-radius: 12px;
   overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 440px; /* Adjusted to match reference image */
+  width: 320px; /* Fixed width like reference */
+  margin: 0 auto; /* Center the cards */
+}
+
+.student-course-card-unique::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4169e1, #00c6ff);
+}
+
+.student-course-card-unique:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(65, 105, 225, 0.15);
+}
+
+.student-course-img-unique {
+  height: 180px; /* Adjusted to match reference proportions */
+  object-fit: cover;
+  width: 100%;
+}
+
+.student-course-card-unique:hover .student-course-img-unique {
+  transform: scale(1.03);
+}
+
+/* Card Content */
+.student-course-body-unique {
+  padding: 16px;
+  background: white;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
 
-.course-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.25);
-}
-
-.course-img {
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 4px solid #4169e1;
-}
-
-/* Card Content */
-.course-title {
+.student-course-title-unique {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #4169e1;
-  margin-bottom: 6px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  line-height: 1.3;
 }
 
-.course-desc {
-  font-size: 0.95rem;
-  color: #4a4a4a;
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.course-category,
-.course-instructor {
+.student-course-desc-unique {
   font-size: 0.9rem;
-  margin-bottom: 6px;
-  color: #333;
+  color: #4a5568;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines like reference */
+  -webkit-box-orient: vertical;
 }
 
-.course-category strong,
-.course-instructor strong {
+.student-course-category-unique,
+.student-course-instructor-unique {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: #2d3748;
+}
+
+.student-course-category-unique strong,
+.student-course-instructor-unique strong {
   color: #4169e1;
+  font-weight: 600;
 }
 
 /* Enroll Button */
-.enroll-btn {
+.student-enroll-btn-unique {
   background: linear-gradient(135deg, #4169e1, #00c6ff);
   border: none;
   color: #fff;
   font-weight: 600;
-  border-radius: 12px;
+  border-radius: 6px;
   transition: all 0.3s ease;
-  padding: 10px 14px;
-  box-shadow: 0 3px 8px rgba(65, 105, 225, 0.3);
+  padding: 10px 16px;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
 }
 
-.enroll-btn:hover {
+.student-enroll-btn-unique:hover {
   background: linear-gradient(135deg, #27408b, #0088cc);
-  box-shadow: 0 5px 12px rgba(65, 105, 225, 0.5);
-  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(65, 105, 225, 0.3);
+  transform: translateY(-2px);
+}
+
+/* No Courses Message */
+.student-no-courses-unique {
+  font-size: 1.2rem;
+  color: #6c757d;
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .student-dashboard-title-unique {
+    font-size: 2.2rem;
+  }
+  
+  .student-course-card-unique {
+    width: 300px;
+    height: 430px;
+  }
+}
+
 @media (max-width: 768px) {
-  .dashboard-title {
-    font-size: 1.6rem;
+  .student-dashboard-title-unique {
+    font-size: 1.8rem;
     text-align: center;
   }
-  .dashboard-actions {
+  
+  .student-dashboard-actions-unique {
     justify-content: center;
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
   }
-  .course-img {
-    height: 160px;
+  
+  .student-course-img-unique {
+    height: 170px;
+  }
+  
+  .student-course-title-unique {
+    font-size: 1.2rem;
+  }
+  
+  .student-course-card-unique {
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
   }
 }
 
 @media (max-width: 576px) {
-  .dashboard-title {
-    font-size: 1.4rem;
+  .student-dashboard-title-unique {
+    font-size: 1.6rem;
   }
-  .course-img {
-    height: 140px;
+  
+  .student-course-img-unique {
+    height: 160px;
   }
-  .enroll-btn {
-    font-size: 0.85rem;
-    padding: 8px 12px;
+  
+  .student-enroll-btn-unique {
+    font-size: 0.9rem;
+    padding: 9px 14px;
   }
-  .course-title {
+  
+  .student-course-title-unique {
     font-size: 1.1rem;
   }
-}
-/* Force card background white */
-.course-card {
-  background: #ffffff !important;
-  border-radius: 14px;
-  border: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.25);
-}
-
-/* Card image */
-.course-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-/* Card text */
-.course-title,
-.course-desc,
-.course-category,
-.course-instructor {
-  color: #222 !important;   /* dark text on white bg */
-}
-
-/* Button */
-.enroll-btn {
-  background: linear-gradient(135deg, #4169e1, #00c6ff);
-  border: none;
-  font-weight: 600;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.enroll-btn:hover {
-  background: linear-gradient(135deg, #27408b, #0088cc);
-  transform: scale(1.05);
+  
+  .student-dashboard-actions-unique button {
+    padding: 7px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .student-course-card-unique {
+    height: 410px;
+  }
+  
+  .student-course-desc-unique {
+    -webkit-line-clamp: 3;
+  }
 }

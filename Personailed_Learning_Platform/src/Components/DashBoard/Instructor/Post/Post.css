@@ -1,0 +1,134 @@
+/* Container */
+.post-course-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+.post-course-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.post-course-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #3498db;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* Form Group */
+.post-course-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+.post-course-label {
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* Inputs */
+.post-course-input,
+.post-course-textarea,
+.post-course-input-file {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+}
+
+.post-course-input:focus,
+.post-course-textarea:focus,
+.post-course-input-file:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+/* Button */
+.post-course-btn {
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.post-course-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .post-course-container {
+    padding: 20px;
+  }
+
+  .post-course-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-course-container {
+    padding: 18px;
+  }
+
+  .post-course-heading {
+    font-size: 1.6rem;
+  }
+
+  .post-course-btn {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-course-container {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .post-course-heading {
+    font-size: 1.4rem;
+  }
+
+  .post-course-input,
+  .post-course-textarea,
+  .post-course-input-file {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .post-course-btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

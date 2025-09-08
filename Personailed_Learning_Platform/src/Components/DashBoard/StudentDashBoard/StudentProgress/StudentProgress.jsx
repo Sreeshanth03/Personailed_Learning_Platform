@@ -1,58 +1,40 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { url } from "../../../../App";
 import "./StudentProgress.css"; // Import CSS
+import { FaCheckCircle, FaBook } from "react-icons/fa"; // Icons
+// Placeholder image
 
 const StudentProgress = () => {
   const [progress, setProgress] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchStudentProgress = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const storedEnrollment = localStorage.getItem("enrollment");
-
-        if (!storedEnrollment) {
-          console.warn("No enrollment found in localStorage");
-          setLoading(false);
-          return;
-        }
-
-        const res = await axios.get(
-          `${url}student/courses/${storedEnrollment}/progress`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
-
-        console.log("Student Progress Response:", res.data);
-
-        // Dynamically calculate percentage if totalLessons > 0
-        const totalLessons = res.data.totalLessons || 0;
-        const completedCount = res.data.completedCount || 0;
-        const percentage =
-          totalLessons > 0
-            ? ((completedCount / totalLessons) * 100).toFixed(2)
-            : "0.00";
-
-        setProgress({
-          completedLessons: res.data.completedLessons || [],
-          totalLessons,
-          completedCount,
-          percentage,
-        });
-      } catch (error) {
-        console.error(
-          "Error fetching progress:",
-          error.response?.data || error.message
-        );
-      } finally {
-        setLoading(false);
-      }
+    // MOCK DATA
+    const mockData = {
+      totalLessons: 12,
+      completedCount: 7,
+      completedLessons: [
+        "Introduction to React",
+        "Components & Props",
+        "State Management",
+        "Event Handling",
+        "Conditional Rendering",
+        "Forms & Inputs",
+        "Hooks Basics",
+      ],
     };
 
-    fetchStudentProgress();
+    const percentage =
+      mockData.totalLessons > 0
+        ? ((mockData.completedCount / mockData.totalLessons) * 100).toFixed(2)
+        : "0.00";
+
+    setTimeout(() => {
+      setProgress({
+        ...mockData,
+        percentage,
+      });
+      setLoading(false);
+    }, 1000); // Simulate API delay
   }, []);
 
   if (loading) return <p className="loading">Loading your progress...</p>;
@@ -63,11 +45,14 @@ const StudentProgress = () => {
     <div className="student-progress-container">
       <h2>My Course Progress</h2>
       <div className="progress-card">
+        <img src="https://www.kindpng.com/picc/m/585-5856121_course-hd-png-download.png" alt="Course" className="course-img" />
         <div className="progress-row">
+          <FaBook className="icon" />
           <span>Total Lessons:</span>
           <span>{progress.totalLessons}</span>
         </div>
         <div className="progress-row">
+          <FaCheckCircle className="icon completed" />
           <span>Completed Lessons:</span>
           <span>{progress.completedCount}</span>
         </div>
@@ -75,16 +60,20 @@ const StudentProgress = () => {
           <span>Percentage:</span>
           <span>{progress.percentage}%</span>
         </div>
+
         {progress.completedLessons.length > 0 && (
           <div className="completed-lessons">
             <h4>Completed Lessons</h4>
             <ul>
               {progress.completedLessons.map((lesson, idx) => (
-                <li key={idx}>{lesson}</li>
+                <li key={idx}>
+                  <FaCheckCircle className="icon-list" /> {lesson}
+                </li>
               ))}
             </ul>
           </div>
         )}
+
         <div className="progress-bar">
           <div
             className="progress-filled"

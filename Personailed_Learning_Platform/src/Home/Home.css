@@ -527,3 +527,265 @@
     font-size: 1.5rem;
   }
 }
+/* Matching Step Icons and Animations */
+.matching-step {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.matching-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.step-icon {
+  font-size: 3rem;
+  color: #e67e22;
+  margin-bottom: 15px;
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.step-1 .step-icon { color: #e67e22; }
+.step-2 .step-icon { color: #27ae60; }
+.step-3 .step-icon { color: #8e44ad; }
+
+.matching-step:hover .step-icon {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Animated fade-in effect for matching steps */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.matching-step {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Add delay for each step for staggered animation */
+.step-1 { animation-delay: 0s; }
+.step-2 { animation-delay: 0.2s; }
+.step-3 { animation-delay: 0.4s; }
+
+/* Responsive adjustments for small devices */
+@media (max-width: 768px) {
+  .matching-step {
+    text-align: center;
+    margin: 15px 0;
+    padding: 15px;
+  }
+  .step-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .matching-step {
+    padding: 12px;
+  }
+  .step-icon {
+    font-size: 2rem;
+  }
+}
+/* Add font-awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Subjects Section Enhancements */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+  background: linear-gradient(90deg, #f0f8ff, #e0f7fa);
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.marquee-content {
+  display: block;
+  width: 100%;
+  font-size: 1.3rem;
+  color: #d35400;
+  font-weight: 700;
+  padding: 10px 0;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Grades Section Enhancements */
+.grade-level {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff, #f1f8ff);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.4s, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.grade-level:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.grade-level h2 {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Animation for Grades */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-grade {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Subjects Icons */
+.subjects-section i {
+  color: #2980b9;
+  margin-right: 8px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .marquee-container { height: 45px; }
+  .marquee-content { font-size: 1.1rem; }
+  .grade-level h2 { font-size: 1.4rem; }
+}
+
+@media (max-width: 768px) {
+  .marquee-container { height: 40px; }
+  .marquee-content { font-size: 1rem; }
+  .grade-level { padding: 15px; }
+  .grade-level h2 { font-size: 1.2rem; }
+}
+
+@media (max-width: 576px) {
+  .marquee-container { height: 35px; }
+  .marquee-content { font-size: 0.95rem; }
+  .grade-level h2 { font-size: 1rem; }
+}
+/* General Section Styling */
+.hero-section, .programming-section {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(120deg, #fdfbfb, #ebedee);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
+  transition: all 0.5s ease;
+}
+
+/* Hero Section Animations */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: #555;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.hero-icons i {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: #ff7f50;
+  transition: transform 0.3s ease;
+}
+.hero-icons i:hover {
+  transform: scale(1.3);
+  color: #ff4500;
+}
+
+/* Programming Courses */
+.programming-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.programming-description {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Course Cards */
+.course-categories {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.course-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+/* Specific Card Colors */
+.frontend i { color: #ff6347; }
+.backend i { color: #32cd32; }
+.schooling i { color: #1e90ff; }
+
+/* Animations */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-title { font-size: 2rem; }
+  .hero-description { font-size: 1rem; }
+  .course-categories { flex-direction: column; align-items: center; }
+}

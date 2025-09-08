@@ -1,55 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { url } from '../../../../App';
 import './Progress.css';
+import { FaCheckCircle, FaUserGraduate } from 'react-icons/fa';
 
 const Progress = () => {
   const [progressData, setProgressData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProgress = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const storedEnrollment = localStorage.getItem("enrollment");
+    // MOCK DYNAMIC DATA
+    const mockStudents = [
+      {
+        student: { name: "Alice Johnson", email: "alice@example.com" },
+        totalLessons: 12,
+        completedLessons: ["Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4"],
+      },
+      {
+        student: { name: "Bob Smith", email: "bob@example.com" },
+        totalLessons: 10,
+        completedLessons: ["Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5", "Lesson 6"],
+      },
+      {
+        student: { name: "Charlie Brown", email: "charlie@example.com" },
+        totalLessons: 8,
+        completedLessons: ["Lesson 1", "Lesson 2", "Lesson 3"],
+      },
+    ];
 
-        if (!storedEnrollment) {
-          console.warn("No enrollment found in localStorage");
-          setLoading(false);
-          return;
-        }
+    // Calculate percentage dynamically
+    const updatedData = mockStudents.map((student) => {
+      const totalLessons = student.totalLessons || 0;
+      const completedCount = student.completedLessons?.length || 0;
+      const percentage = totalLessons > 0 ? ((completedCount / totalLessons) * 100).toFixed(2) : "0.00";
+      return { ...student, completedCount, percentage };
+    });
 
-        const res = await axios.get(
-          `${url}Courses/${storedEnrollment}/progress`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
-
-        const data = res.data || [];
-
-        // Dynamically calculate percentage if not provided
-        const updatedData = data.map((student) => {
-          const totalLessons = student.totalLessons || 0;
-          const completedCount = student.completedLessons?.length || 0;
-          const percentage = totalLessons > 0 ? ((completedCount / totalLessons) * 100).toFixed(2) : "0.00";
-
-          return {
-            ...student,
-            completedCount,
-            percentage,
-          };
-        });
-
-        setProgressData(updatedData);
-      } catch (error) {
-        console.error("Error fetching progress:", error.response?.data || error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProgress();
+    setTimeout(() => {
+      setProgressData(updatedData);
+      setLoading(false);
+    }, 1000); // simulate API delay
   }, []);
 
   if (loading) return <p className="loading">Loading student progress...</p>;
@@ -72,15 +60,21 @@ const Progress = () => {
             </thead>
             <tbody>
               {progressData.map((student, index) => (
-                <tr key={student.student._id || index}>
-                  <td>{index + 1}</td>
+                <tr key={index} className="animated-row">
+                  <td>
+                    <FaUserGraduate style={{ color: "#3498db", marginRight: "5px" }} />
+                    {index + 1}
+                  </td>
                   <td>{student.student.name}</td>
                   <td>{student.student.email}</td>
                   <td>
                     {student.completedCount > 0 ? (
                       <ul>
                         {student.completedLessons.map((lesson, i) => (
-                          <li key={i}>{lesson}</li>
+                          <li key={i}>
+                            <FaCheckCircle style={{ color: "#27ae60", marginRight: "5px" }} />
+                            {lesson}
+                          </li>
                         ))}
                       </ul>
                     ) : (
@@ -102,6 +96,9 @@ const Progress = () => {
               ))}
             </tbody>
           </table>
+          <div className="course-image-container">
+            <img src="https://www.kindpng.com/picc/m/585-5856121_course-hd-png-download.png" alt="Course" />
+          </div>
         </div>
       ) : (
         <p>No progress data found</p>

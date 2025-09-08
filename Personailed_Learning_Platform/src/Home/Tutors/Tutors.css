@@ -1,0 +1,142 @@
+/* Main container */
+.tutors-container {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+}
+
+/* Header section */
+.tutors-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #4B0082; /* Deep purple */
+}
+
+.tutors-header h6 {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Subtitle */
+.tutors-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #6A5ACD;
+}
+
+/* Cards container */
+.tutors-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Individual card */
+.tutors-card {
+  background: linear-gradient(135deg, #ffffff, #f0f0ff);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1 1 280px;
+  max-width: 320px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tutors-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.tutors-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #4B0082;
+}
+
+.tutors-card h6 {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Card icons/images */
+.tutors-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.tutors-card img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Icon overlay for more flair */
+.tutors-card::after {
+  content: '✨';
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: rgba(255, 215, 0, 0.7);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .tutors-cards {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tutors-header h3 {
+    font-size: 1.7rem;
+  }
+  .tutors-header h6 {
+    font-size: 0.9rem;
+  }
+  .tutors-subtitle {
+    font-size: 1rem;
+  }
+  .tutors-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tutors-header h3 {
+    font-size: 1.4rem;
+  }
+  .tutors-card h4 {
+    font-size: 1.1rem;
+  }
+  .tutors-card h6 {
+    font-size: 0.85rem;
+  }
+  .tutors-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
